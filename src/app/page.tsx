@@ -1,9 +1,12 @@
-import Image from 'next/image'
-
+import Image from "next/image";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+//24 25
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      hello
-    </main>
-  )
+    <MaxWidthWrapper className="">
+      <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
+        <div>hello</div>
+      </div>
+    </MaxWidthWrapper>
+  );
 }
