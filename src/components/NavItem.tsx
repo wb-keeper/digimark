@@ -5,6 +5,7 @@ import { PRODUCT_CATEGORIES } from "@/config";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 
 type Category = (typeof PRODUCT_CATEGORIES)[number];
 interface NavItemProps {
@@ -41,7 +42,7 @@ const NavItem: FC<NavItemProps> = ({
           className={cn(
             "absolute inset-x-0 top-full text-sm text-muted-foreground",
             {
-              "animate-in fade-in-10 slide-in-from-top-5": !isAnyOpen,
+              "animate-in fade-in-10 slide-in-from-top-5": isOpen,
             },
           )}
         >
@@ -66,6 +67,15 @@ const NavItem: FC<NavItemProps> = ({
                             fill
                           />
                         </div>
+                        <Link
+                          href={item.href}
+                          className="mt-6 block font-medium text-gray-900"
+                        >
+                          {item.name}
+                        </Link>
+                        <p className="mt-1" aria-hidden>
+                          Shop now
+                        </p>
                       </div>
                     ))}
                   </div>
